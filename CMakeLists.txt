@@ -1,6 +1,12 @@
 cmake_minimum_required(VERSION 4.0.0 FATAL_ERROR)
 
-project(Test_opengl)
+set(project_name Test_opengl)
 
-add_executable(Test_opengl src/main.cpp)
+project(${project_name})
+
+add_executable(${project_name} src/main.cpp)
+
+add_subdirectory(external/glfw)
+
+target_link_libraries(${project_name} glfw)
 
